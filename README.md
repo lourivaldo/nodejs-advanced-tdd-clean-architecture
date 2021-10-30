@@ -3,12 +3,12 @@
 > ## Andamento Curso
 
 - Section 1: Introdução
-- [ ] Introdução
-- [ ] Repositório do Github
+- [x] Introdução
+- [x] Repositório do Github
 - Section 2: Configurando o Ambiente
-- [ ] Atalhos do Git
-- [ ] Plugins e EditorConfig
-- [ ] Typescript - Target
+- [x] Atalhos do Git
+- [x] Plugins e EditorConfig
+- [x] Typescript - Target
 - [ ] Typescript - Module
 - [ ] Typescript - Strict Mode
 - [ ] Eslint
