@@ -11,8 +11,8 @@
 - [x] Typescript - Target
 - [x] Typescript - Module
 - [x] Typescript - Strict Mode
-- [ ] Eslint
-- [ ] Jest
+- [x] Eslint
+- [x] Jest
 - [ ] Lint Staged & Husky
 - Section 3: Login com Facebook - Domain Layer
 - [ ] Definindo o caso de uso e criando a interface no Domain Layer
