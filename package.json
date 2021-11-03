@@ -10,6 +10,7 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "jest --passWithNoTests --no-cache --runInBand",
     "test:watch": "npm test -- --watch",
+    "test:staged": "npm test -- --findRelatedTests",
     "test:coverage": "npm test -- --coverage"
   },
   "keywords": [],
@@ -26,6 +27,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.1",
     "jest": "^27.3.1",
+    "lint-staged": "^11.2.6",
     "ts-jest": "^27.0.7",
     "typescript": "^4.4.4"
   },
