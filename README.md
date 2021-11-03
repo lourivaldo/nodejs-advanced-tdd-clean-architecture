@@ -9,8 +9,8 @@
 - [x] Atalhos do Git
 - [x] Plugins e EditorConfig
 - [x] Typescript - Target
-- [ ] Typescript - Module
-- [ ] Typescript - Strict Mode
+- [x] Typescript - Module
+- [x] Typescript - Strict Mode
 - [ ] Eslint
 - [ ] Jest
 - [ ] Lint Staged & Husky
