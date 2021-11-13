@@ -16,7 +16,7 @@
 - [x] Lint Staged & Husky
 - Section 3: Login com Facebook - Domain Layer
 - [x] Definindo o caso de uso e criando a interface no Domain Layer
-- [ ] Desacoplando a integração com API de terceiros
+- [x] Desacoplando a integração com API de terceiros
 - [ ] Diferentes formas de mockar uma dependência
 - [ ] Diferentes formas de isolar a criação do SUT
 - [ ] Desacoplando Repositórios e aplicando Intersection Types
