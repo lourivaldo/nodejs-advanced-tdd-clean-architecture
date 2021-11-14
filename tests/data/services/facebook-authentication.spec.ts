@@ -2,11 +2,11 @@ import { mock, MockProxy } from 'jest-mock-extended'
 import { AuthenticationError } from '@/domain/errors'
 import { FacebookAuthenticationService } from '@/data/services'
 import { LoadFacebookUserApi } from '@/data/contracts/apis/facebook'
-import { CreateFacebookAccountRepository, LoadUserAccountRepository } from '@/data/contracts/repositories'
+import { CreateFacebookAccountRepository, LoadUserAccountRepository, UpdateFacebookAccountRepository } from '@/data/contracts/repositories'
 
 describe('FacebookAuthenticationService', () => {
   let facebookApi: MockProxy<LoadFacebookUserApi>
-  let userAccountRepository: MockProxy<LoadUserAccountRepository & CreateFacebookAccountRepository>
+  let userAccountRepository: MockProxy<LoadUserAccountRepository & CreateFacebookAccountRepository & UpdateFacebookAccountRepository>
 
   let sut: FacebookAuthenticationService
   const token = 'working_token'
@@ -45,7 +45,7 @@ describe('FacebookAuthenticationService', () => {
     expect(userAccountRepository.load).toHaveBeenCalledTimes(1)
   })
 
-  it('Should call CreateUserAccountRepo when LoadUserAccountRepo returns undefined', async () => {
+  it('Should call CreateFacebookAccountRepo when LoadUserAccountRepo returns undefined', async () => {
     userAccountRepository.load.mockResolvedValueOnce(undefined)
 
     await sut.perform({ token })
@@ -56,5 +56,21 @@ describe('FacebookAuthenticationService', () => {
       facebookId: 'any_fb_id'
     })
     expect(userAccountRepository.createFromFacebook).toHaveBeenCalledTimes(1)
+  })
+
+  it('Should call UpdateFacebookAccountRepo when LoadUserAccountRepo returns data', async () => {
+    userAccountRepository.load.mockResolvedValueOnce({
+      id: 'any_id',
+      name: 'any_name'
+    })
+
+    await sut.perform({ token })
+
+    expect(userAccountRepository.updateWithFacebook).toHaveBeenCalledWith({
+      id: 'any_id',
+      name: 'any_name',
+      facebookId: 'any_fb_id'
+    })
+    expect(userAccountRepository.updateWithFacebook).toHaveBeenCalledTimes(1)
   })
 })
