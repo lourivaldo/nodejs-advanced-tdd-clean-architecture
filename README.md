@@ -18,8 +18,8 @@
 - [x] Definindo o caso de uso e criando a interface no Domain Layer
 - [x] Desacoplando a integração com API de terceiros
 - [x] Diferentes formas de mockar uma dependência
-- [ ] Diferentes formas de isolar a criação do SUT
-- [ ] Desacoplando Repositórios e aplicando Intersection Types
+- [x] Diferentes formas de isolar a criação do SUT
+- [x] Desacoplando Repositórios e aplicando Intersection Types
 - [ ] Removendo detalhes de implementação do Service
 - [ ] Movendo regras de negócio para uma entidade no domínio
 - [ ] Mockando uma dependência criada pela própria classe
