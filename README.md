@@ -20,7 +20,7 @@
 - [x] Diferentes formas de mockar uma dependência
 - [x] Diferentes formas de isolar a criação do SUT
 - [x] Desacoplando Repositórios e aplicando Intersection Types
-- [ ] Removendo detalhes de implementação do Service
+- [x] Removendo detalhes de implementação do Service
 - [ ] Movendo regras de negócio para uma entidade no domínio
 - [ ] Mockando uma dependência criada pela própria classe
 - [ ] Criando Token de Acesso com expiração
