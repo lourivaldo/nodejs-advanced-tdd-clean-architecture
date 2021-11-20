@@ -21,7 +21,7 @@
 - [x] Diferentes formas de isolar a criação do SUT
 - [x] Desacoplando Repositórios e aplicando Intersection Types
 - [x] Removendo detalhes de implementação do Service
-- [ ] Movendo regras de negócio para uma entidade no domínio
+- [x] Movendo regras de negócio para uma entidade no domínio
 - [ ] Mockando uma dependência criada pela própria classe
 - [ ] Criando Token de Acesso com expiração
 - [ ] Fazendo o Service implementar a feature do domínio
