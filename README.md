@@ -22,8 +22,8 @@
 - [x] Desacoplando Repositórios e aplicando Intersection Types
 - [x] Removendo detalhes de implementação do Service
 - [x] Movendo regras de negócio para uma entidade no domínio
-- [ ] Mockando uma dependência criada pela própria classe
-- [ ] Criando Token de Acesso com expiração
+- [x] Mockando uma dependência criada pela própria classe
+- [x] Criando Token de Acesso com expiração
 - [ ] Fazendo o Service implementar a feature do domínio
 - [ ] Testando casos de exceção
 - [ ] Diagrama de Dependências atualizado e otimização de código
