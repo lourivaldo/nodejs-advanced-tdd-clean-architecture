@@ -1,5 +1,7 @@
 # nodejs-advanced-tdd-clean-architecture
 
+Repo: https://github.com/rmanguinho/advanced-node
+
 > ## Andamento Curso
 
 - Section 1: Introdução
@@ -24,16 +26,16 @@
 - [x] Movendo regras de negócio para uma entidade no domínio
 - [x] Mockando uma dependência criada pela própria classe
 - [x] Criando Token de Acesso com expiração
-- [ ] Fazendo o Service implementar a feature do domínio
-- [ ] Testando casos de exceção
-- [ ] Diagrama de Dependências atualizado e otimização de código
+- [x] Fazendo o Service implementar a feature do domínio
+- [x] Testando casos de exceção
+- [x] Diagrama de Dependências atualizado e otimização de código
 - Section 4: Integrando com API do Facebook - Infra Layer
-- [ ] Obtendo o App Token (token da empresa)
-- [ ] Obtendo o debug token e os dados do usuário
-- [ ] Refatorando o FacebookApi e adicionando Generics ao HttpGetClient
-- [ ] Diagrama de Dependências e Code Coverage
-- [ ] Implementando o HttpClient com Axios
-- [ ] Gerando Token de Acesso com o JWT
+- [x] Obtendo o App Token (token da empresa)
+- [x] Obtendo o debug token e os dados do usuário
+- [x] Refatorando o FacebookApi e adicionando Generics ao HttpGetClient
+- [x] Diagrama de Dependências e Code Coverage
+- [x] Implementando o HttpClient com Axios
+- [x] Gerando Token de Acesso com o JWT
 - Section 5: Anti Corruption Layer - Repositório com TypeORM
 - [ ] Testando o repositório com Postgres em memória e TypeORM
 - [ ] Tornando a criação do banco em memória reutilizável
