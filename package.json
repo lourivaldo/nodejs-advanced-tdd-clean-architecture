@@ -18,6 +18,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/jest": "^27.0.2",
     "@types/module-alias": "^2.0.1",
     "@types/node": "^16.11.6",
@@ -38,6 +39,7 @@
     "node": "16.X"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "module-alias": "^2.2.2",
     "rimraf": "^3.0.2"
   }
