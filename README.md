@@ -37,9 +37,9 @@ Repo: https://github.com/rmanguinho/advanced-node
 - [x] Implementando o HttpClient com Axios
 - [x] Gerando Token de Acesso com o JWT
 - Section 5: Anti Corruption Layer - Repositório com TypeORM
-- [ ] Testando o repositório com Postgres em memória e TypeORM
-- [ ] Tornando a criação do banco em memória reutilizável
-- [ ] Testando a implementação do save (create/update)
+- [x] Testando o repositório com Postgres em memória e TypeORM
+- [x] Tornando a criação do banco em memória reutilizável
+- [x] Testando a implementação do save (create/update)
 - Section 6: Login com Facebook - Application Layer
 - [ ] Testando o FacebookLogin Controller
 - [ ] Criando erros customizados, helpers e Generics
