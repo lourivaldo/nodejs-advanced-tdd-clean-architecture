@@ -9,22 +9,22 @@ describe('PgUserAccountRepository', () => {
   let pgUserRepo: Repository<PgUser>
   let pgBackup: IBackup
 
+  beforeAll(async () => {
+    const db = await makeFakeDb([PgUser])
+    pgBackup = db.backup()
+    pgUserRepo = getRepository(PgUser)
+  })
+
+  afterAll(async () => {
+    await getConnection().close()
+  })
+
+  beforeEach(() => {
+    pgBackup.restore()
+    sut = new PgUserAccountRepository()
+  })
+
   describe('load', () => {
-    beforeAll(async () => {
-      const db = await makeFakeDb([PgUser])
-      pgBackup = db.backup()
-      pgUserRepo = getRepository(PgUser)
-    })
-
-    afterAll(async () => {
-      await getConnection()?.close()
-    })
-
-    beforeEach(() => {
-      pgBackup.restore()
-      sut = new PgUserAccountRepository()
-    })
-
     it('should return an account if email exists', async () => {
       await pgUserRepo.save({ email: 'any_email' })
 
