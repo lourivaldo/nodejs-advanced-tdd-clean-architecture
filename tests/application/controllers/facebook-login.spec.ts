@@ -4,7 +4,7 @@ import { AuthenticationError } from '@/domain/errors/authentication'
 import { AccessToken } from '@/domain/models'
 import { FacebookLoginController } from '@/application/controllers'
 import { ServerError } from '@/application/errors'
-import { RequiredFieldError, UnathorizedError } from '../../src/application/errors/http'
+import { RequiredFieldError, UnathorizedError } from '../../../src/application/errors/http'
 
 describe('FacebookLoginController', () => {
   let sut: FacebookLoginController
