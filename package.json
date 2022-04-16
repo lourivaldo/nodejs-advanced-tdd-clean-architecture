@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/main/api",
+    "start": "node dist/main",
     "build": "rimraf dist && tsc -p tsconfig-build.json",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
@@ -20,6 +20,8 @@
   "license": "ISC",
   "devDependencies": {
     "@types/axios": "^0.14.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
     "@types/jest": "^27.0.2",
     "@types/jsonwebtoken": "^8.5.8",
     "@types/module-alias": "^2.0.1",
@@ -43,6 +45,8 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
     "module-alias": "^2.2.2",
     "pg": "^8.7.3",
