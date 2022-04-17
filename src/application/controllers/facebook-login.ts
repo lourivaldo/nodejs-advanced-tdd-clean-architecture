@@ -1,4 +1,4 @@
-import { HttpResponse, unathorized, ok } from '@/application/helpers'
+import { HttpResponse, unauthorized, ok } from '@/application/helpers'
 import { FacebookAuthentication } from '@/domain/features'
 import { AccessToken } from '@/domain/models'
 import { Validator, ValidatorBuilder } from '@/application/validation'
@@ -24,7 +24,7 @@ export class FacebookLoginController extends Controller {
         accessToken: accessToken.value
       })
     }
-    return unathorized()
+    return unauthorized()
   }
 
   override buildValidators ({ token }: any): Validator[] {
