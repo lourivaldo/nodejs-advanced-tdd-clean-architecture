@@ -1,26 +1,27 @@
 import { LoadFacebookUserApi } from '@/domain/contracts/apis'
 import { SaveFacebookAccountRepository, LoadUserAccountRepository } from '@/domain/contracts/repositories'
 import { AuthenticationError } from '@/domain/entities/errors'
-import { FacebookAuthentication } from '@/domain/features'
 import { AccessToken, FacebookAccount } from '@/domain/entities'
 import { TokenGenerator } from '@/domain/contracts/crypto'
 
-export class FacebookAuthenticationUseCase implements FacebookAuthentication {
-  constructor (
-    private readonly facebookApi: LoadFacebookUserApi,
-    private readonly userAccountRepository: LoadUserAccountRepository & SaveFacebookAccountRepository,
-    private readonly crypto: TokenGenerator
-  ) {}
+type Setup = (
+  facebookApi: LoadFacebookUserApi,
+  userAccountRepository: LoadUserAccountRepository & SaveFacebookAccountRepository,
+  crypto: TokenGenerator
+) => FacebookAuthentication
 
-  async perform (params: FacebookAuthentication.Params): Promise<FacebookAuthentication.Result> {
-    const fbData = await this.facebookApi.loadUser(params)
+export type FacebookAuthentication = (params: { token: string }) => Promise<{ accessToken: string }>
+
+export const setupFacebookAuthentication: Setup = (facebookApi, userAccountRepository, crypto) => {
+  return async params => {
+    const fbData = await facebookApi.loadUser(params)
     if (fbData !== undefined) {
-      const accountData = await this.userAccountRepository.load({ email: fbData.email })
+      const accountData = await userAccountRepository.load({ email: fbData.email })
       const facebookAccount = new FacebookAccount(fbData, accountData)
-      const { id } = await this.userAccountRepository.saveWithFacebook(facebookAccount)
-      const token = await this.crypto.generateToken({ key: id, expirationInMs: AccessToken.expirationInMs })
-      return new AccessToken(token)
+      const { id } = await userAccountRepository.saveWithFacebook(facebookAccount)
+      const accessToken = await crypto.generateToken({ key: id, expirationInMs: AccessToken.expirationInMs })
+      return { accessToken }
     }
-    return new AuthenticationError()
+    throw new AuthenticationError()
   }
 }
