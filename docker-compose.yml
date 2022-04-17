@@ -1,0 +1,26 @@
+version: '3.5'
+
+services:
+    pgsql:
+        build: ./docker/postgresql
+        ports:
+            - '5432:5432'
+        environment:
+            PGPASSWORD: 'secret'
+            POSTGRES_DB: 'app_db'
+            POSTGRES_USER: 'postgres'
+            POSTGRES_PASSWORD: 'secret'
+        volumes:
+            - 'sailpostgresql:/var/lib/postgresql/data'
+        networks:
+            - sail
+        healthcheck:
+          test: ["CMD", "pg_isready", "-q", "-d", "app_db", "-U", "postgres"]
+
+networks:
+    sail:
+        driver: bridge
+
+volumes:
+    sailpostgresql:
+        driver: local

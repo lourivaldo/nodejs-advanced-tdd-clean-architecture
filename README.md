@@ -1,6 +1,29 @@
-# nodejs-advanced-tdd-clean-architecture
+# Nodejs Advanced TDD Clean Architecture
 
 Repo: https://github.com/rmanguinho/advanced-node
+
+## Requirements
+- NodeJS v14.17.4
+- Docker 20.10.14
+- Docker Compose 1.25.420
+
+## Installing
+```
+npm install
+npm run build
+```
+
+## Running
+```
+docker-compose up --build
+npm start
+```
+
+## Tests
+```
+npm test
+npm test:fb-api
+```
 
 > ## Andamento Curso
 
@@ -41,27 +64,27 @@ Repo: https://github.com/rmanguinho/advanced-node
 - [x] Tornando a criação do banco em memória reutilizável
 - [x] Testando a implementação do save (create/update)
 - Section 6: Login com Facebook - Application Layer
-- [ ] Testando o FacebookLogin Controller
-- [ ] Criando erros customizados, helpers e Generics
-- [ ] Isolando a validação do Controller
-- [ ] Simplificando os testes do Controller
-- [ ] Aplicando o Composite Pattern
-- [ ] Aplicando o Fluent Builder Pattern
-- [ ] Applicando o Template Method Pattern
+- [x] Testando o FacebookLogin Controller
+- [x] Criando erros customizados, helpers e Generics
+- [x] Isolando a validação do Controller
+- [x] Simplificando os testes do Controller
+- [x] Aplicando o Composite Pattern
+- [x] Aplicando o Fluent Builder Pattern
+- [x] Applicando o Template Method Pattern
 - Section 7: Login com Facebook - Main Layer (Composition)
-- [ ] Configurando o Jest para testes de integração
-- [ ] Testando a API do Facebook
-- [ ] Configurando a API com express
-- [ ] Aplicando o Factory Pattern
-- [ ] Aplicando o Adapter Pattern
-- [ ] Refatorando o projeto
-- [ ] Criando teste de integração do Facebook Login
-- [ ] Testando a API com dados reais
-- [ ] Ajustes finais
+- [x] Configurando o Jest para testes de integração
+- [x] Testando a API do Facebook
+- [x] Configurando a API com express
+- [x] Aplicando o Factory Pattern
+- [x] Aplicando o Adapter Pattern
+- [x] Refatorando o projeto
+- [x] Criando teste de integração do Facebook Login
+- [x] Testando a API com dados reais
+- [x] Ajustes finais
 - Section 8: Clean Architecture
-- [ ] Outra forma de organizar a arquitetura
-- [ ] Use Cases funcionais
-- [ ] Alterando o UseCase para retornar um DTO
+- [x] Outra forma de organizar a arquitetura
+- [x] Use Cases funcionais
+- [x] Alterando o UseCase para retornar um DTO
 - Section 9: Middleware de Autenticação
 - [ ] Chain of Responsibility, Proxy e Decorator
 - [ ] Use Case / Middle Man
