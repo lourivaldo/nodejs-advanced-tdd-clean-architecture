@@ -1,5 +1,5 @@
 import { sign } from 'jsonwebtoken'
-import { TokenGenerator } from '@/data/contracts/crypto'
+import { TokenGenerator } from '@/domain/contracts/crypto'
 
 type Params = TokenGenerator.Params
 type Result = TokenGenerator.Result

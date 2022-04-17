@@ -1,5 +1,5 @@
 import { getRepository } from 'typeorm'
-import { LoadUserAccountRepository, SaveFacebookAccountRepository } from '@/data/contracts/repositories'
+import { LoadUserAccountRepository, SaveFacebookAccountRepository } from '@/domain/contracts/repositories'
 import { PgUser } from '@/infra/postgres/entities'
 
 type LoadParams = LoadUserAccountRepository.Params
