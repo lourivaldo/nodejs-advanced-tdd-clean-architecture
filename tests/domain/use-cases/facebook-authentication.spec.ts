@@ -42,7 +42,7 @@ describe('FacebookAuthentication', () => {
     )
   })
 
-  it('Should call LoadFacebookUserApi with correct params', async () => {
+  it('Should call LoadFacebookUserApi with correct input', async () => {
     await sut({ token })
     expect(facebookApi.loadUser).toHaveBeenCalledWith({ token })
     expect(facebookApi.loadUser).toHaveBeenCalledTimes(1)
@@ -72,7 +72,7 @@ describe('FacebookAuthentication', () => {
     expect(userAccountRepository.saveWithFacebook).toHaveBeenCalledTimes(1)
   })
 
-  it('Should call TokenGenerator with correct params', async () => {
+  it('Should call TokenGenerator with correct input', async () => {
     await sut({ token })
 
     expect(crypto.generateToken).toHaveBeenCalledWith({
@@ -83,9 +83,9 @@ describe('FacebookAuthentication', () => {
   })
 
   it('Should return an AccessToken on success', async () => {
-    const authResult = await sut({ token })
+    const authOutput = await sut({ token })
 
-    expect(authResult).toEqual({ accessToken: 'any_generated_token' })
+    expect(authOutput).toEqual({ accessToken: 'any_generated_token' })
   })
 
   it('Should rethrow if LoadFacebookApi throws', async () => {

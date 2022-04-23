@@ -89,7 +89,7 @@ npm test:fb-api
 - [x] Chain of Responsibility, Proxy e Decorator
 - [x] Use Case / Middle Man
 - [x] Anti-Patterns (Code Smells)
-- [ ] Validando token com JWT
+- [x] Validando token com JWT
 - [ ] Application Layer - Criando o Middleware
 - [ ] Adaptando o Middleware para o Express
 - [ ] Criando teste de integração

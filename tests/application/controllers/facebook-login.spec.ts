@@ -26,7 +26,7 @@ describe('FacebookLoginController', () => {
     ])
   })
 
-  it('Should call FacebookAuthentication with correct params', async () => {
+  it('Should call FacebookAuthentication with correct input', async () => {
     await sut.handle({ token })
 
     expect(facebookAuth).toHaveBeenCalledWith({ token })
