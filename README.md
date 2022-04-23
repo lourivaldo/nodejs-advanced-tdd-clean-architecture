@@ -90,8 +90,8 @@ npm test:fb-api
 - [x] Use Case / Middle Man
 - [x] Anti-Patterns (Code Smells)
 - [x] Validando token com JWT
-- [ ] Application Layer - Criando o Middleware
-- [ ] Adaptando o Middleware para o Express
+- [x] Application Layer - Criando o Middleware
+- [x] Adaptando o Middleware para o Express
 - [ ] Criando teste de integração
 - [ ] Eliminando o Middle Man
 - [ ] Debugando com ts-node-dev
