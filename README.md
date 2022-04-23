@@ -86,9 +86,9 @@ npm test:fb-api
 - [x] Use Cases funcionais
 - [x] Alterando o UseCase para retornar um DTO
 - Section 9: Middleware de Autenticação
-- [ ] Chain of Responsibility, Proxy e Decorator
-- [ ] Use Case / Middle Man
-- [ ] Anti-Patterns (Code Smells)
+- [x] Chain of Responsibility, Proxy e Decorator
+- [x] Use Case / Middle Man
+- [x] Anti-Patterns (Code Smells)
 - [ ] Validando token com JWT
 - [ ] Application Layer - Criando o Middleware
 - [ ] Adaptando o Middleware para o Express
