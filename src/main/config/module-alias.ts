@@ -1,4 +1,5 @@
 import { addAlias } from 'module-alias'
 import { resolve } from 'path'
 
-addAlias('@', resolve('dist'))
+const path = process.env.TS_NODE_DEV === undefined ? 'dist' : 'src'
+addAlias('@', resolve(path))
