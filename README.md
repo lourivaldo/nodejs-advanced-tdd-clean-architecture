@@ -92,9 +92,9 @@ npm test:fb-api
 - [x] Validando token com JWT
 - [x] Application Layer - Criando o Middleware
 - [x] Adaptando o Middleware para o Express
-- [ ] Criando teste de integração
-- [ ] Eliminando o Middle Man
-- [ ] Debugando com ts-node-dev
+- [x] Criando teste de integração
+- [x] Eliminando o Middle Man
+- [x] Debugando com ts-node-dev
 - Section 10: Atualizar Foto do Perfil - Domain Layer
 - [ ] Refatorando a Arquitetura
 - [ ] Use Case
