@@ -11,7 +11,7 @@ describe('Login Routes', () => {
     let pgBackup: IBackup
     const loadUserSpy = jest.fn()
 
-    jest.mock('@/infra/apis/facebook', () => ({
+    jest.mock('@/infra/gateways/facebook', () => ({
       FacebookApi: jest.fn().mockReturnValue({
         loadUser: loadUserSpy
       })

@@ -96,7 +96,7 @@ npm test:fb-api
 - [x] Eliminando o Middle Man
 - [x] Debugando com ts-node-dev
 - Section 10: Atualizar Foto do Perfil - Domain Layer
-- [ ] Refatorando a Arquitetura
+- [x] Refatorando a Arquitetura
 - [ ] Use Case
 - [ ] Integrando com o FileStorage
 - [ ] Integrando com o repositório de UserProfile
