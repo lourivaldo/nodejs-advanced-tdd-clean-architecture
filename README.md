@@ -97,8 +97,8 @@ npm test:fb-api
 - [x] Debugando com ts-node-dev
 - Section 10: Atualizar Foto do Perfil - Domain Layer
 - [x] Refatorando a Arquitetura
-- [ ] Use Case
-- [ ] Integrando com o FileStorage
+- [x] Use Case
+- [x] Integrando com o FileStorage
 - [ ] Integrando com o repositório de UserProfile
 - [ ] Testando regras de negócio
 - [ ] Movendo testes de negócio para a Entity UserProfile
