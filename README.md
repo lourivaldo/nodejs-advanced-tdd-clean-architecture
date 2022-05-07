@@ -99,11 +99,11 @@ npm test:fb-api
 - [x] Refatorando a Arquitetura
 - [x] Use Case
 - [x] Integrando com o FileStorage
-- [ ] Integrando com o repositório de UserProfile
-- [ ] Testando regras de negócio
-- [ ] Movendo testes de negócio para a Entity UserProfile
-- [ ] Testando retorno do caso de uso e fluxo de exceção
-- [ ] Test Coverage
+- [x] Integrando com o repositório de UserProfile
+- [x] Testando regras de negócio
+- [x] Movendo testes de negócio para a Entity UserProfile
+- [x] Testando retorno do caso de uso e fluxo de exceção
+- [x] Test Coverage
 - Section 11: Atualizar Foto do Perfil - Infra Layer
 - [ ] UUID
 - [ ] UUID sem lib de terceiros
