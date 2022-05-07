@@ -1,4 +1,6 @@
-export * from './facebook'
+export * from './facebook-api'
 export * from './jwt-token'
 export * from './uuid-handler'
 export * from './unique-id'
+export * from './client'
+export * from './axios-client'
