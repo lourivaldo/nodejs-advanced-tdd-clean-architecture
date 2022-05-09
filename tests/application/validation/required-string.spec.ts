@@ -1,4 +1,4 @@
-import { RequiredFieldError } from '@/application/errors/http'
+import { RequiredFieldError } from '@/application/errors'
 import { RequiredStringValidator } from '@/application/validation'
 
 describe('RequiredStringValidator', () => {
