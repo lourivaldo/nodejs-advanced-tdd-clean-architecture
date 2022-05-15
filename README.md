@@ -105,21 +105,21 @@ npm test:fb-api
 - [x] Testando retorno do caso de uso e fluxo de exceção
 - [x] Test Coverage
 - Section 11: Atualizar Foto do Perfil - Infra Layer
-- [ ] UUID
-- [ ] UUID sem lib de terceiros
-- [ ] Refatorando a Arquitetura
-- [ ] Upload com AWS S3 - Parte 1
-- [ ] Upload com AWS S3 - Parte 2
-- [ ] Remover arquivos na AWS S3
-- [ ] Integrando com repositório de salvar imagem
-- [ ] Integrando com repositório de carregar dados do perfil
+- [x] UUID
+- [x] UUID sem lib de terceiros
+- [x] Refatorando a Arquitetura
+- [x] Upload com AWS S3 - Parte 1
+- [x] Upload com AWS S3 - Parte 2
+- [x] Remover arquivos na AWS S3
+- [x] Integrando com repositório de salvar imagem
+- [x] Integrando com repositório de carregar dados do perfil
 - Section 12: Atualizar Foto do Perfil - Application Layer
-- [ ] Implementando o Controller que apaga a foto de perfil
-- [ ] Validando a imagem recebida do client
-- [ ] Integrando com o UseCase
-- [ ] Criando Validator para Buffer obrigatório
-- [ ] Criando Validator para MimeType
-- [ ] Criando Validator para tamanho máximo de arquivo
+- [x] Implementando o Controller que apaga a foto de perfil
+- [x] Validando a imagem recebida do client
+- [x] Integrando com o UseCase
+- [x] Criando Validator para Buffer obrigatório
+- [x] Criando Validator para MimeType
+- [x] Criando Validator para tamanho máximo de arquivo
 - [ ] Refatorando o Controller para utilizar o Builder
 - Section 13: Atualizar Foto do Perfil - Main Layer
 - [ ] Criando teste de integração para a AWS S3
