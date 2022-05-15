@@ -120,7 +120,7 @@ npm test:fb-api
 - [x] Criando Validator para Buffer obrigatório
 - [x] Criando Validator para MimeType
 - [x] Criando Validator para tamanho máximo de arquivo
-- [ ] Refatorando o Controller para utilizar o Builder
+- [x] Refatorando o Controller para utilizar o Builder
 - Section 13: Atualizar Foto do Perfil - Main Layer
 - [ ] Criando teste de integração para a AWS S3
 - [ ] Corrigindo use case para adicionar extensão no arquivo
