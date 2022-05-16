@@ -13,7 +13,9 @@
     "test:watch": "npm test -- --watch",
     "test:staged": "npm test -- --findRelatedTests",
     "test:coverage": "npm test -- --coverage",
-    "test:fb-api": "npm test -- -c ./jest.integration.config.js",
+    "test:integration": "npm test -- -c ./jest.integration.config.js",
+    "test:fb-api": "npm run test:integration -- ./tests/external/facebook-api.test.ts",
+    "test:s3": "npm run test:integration -- ./tests/external/aws-s3-file-storage.test.ts",
     "prepare": "husky install",
     "check": "npm-check -s -u"
   },
