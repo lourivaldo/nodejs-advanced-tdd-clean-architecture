@@ -1,5 +1,5 @@
 export namespace UploadFile {
-  export type Input = { file: Buffer, key: string }
+  export type Input = { file: Buffer, fileName: string }
   export type Output = string
 }
 
@@ -8,7 +8,7 @@ export interface UploadFile {
 }
 
 export namespace DeleteFile {
-  export type Input = { key: string }
+  export type Input = { fileName: string }
 }
 
 export interface DeleteFile {
