@@ -122,9 +122,9 @@ npm test:fb-api
 - [x] Criando Validator para tamanho máximo de arquivo
 - [x] Refatorando o Controller para utilizar o Builder
 - Section 13: Atualizar Foto do Perfil - Main Layer
-- [ ] Criando teste de integração para a AWS S3
-- [ ] Corrigindo use case para adicionar extensão no arquivo
-- [ ] Criando teste de integração para a rota de apagar foto
+- [x] Criando teste de integração para a AWS S3
+- [x] Corrigindo use case para adicionar extensão no arquivo
+- [x] Criando teste de integração para a rota de apagar foto
 - [ ] Ajustes nos Controllers de upload
 - [ ] Upload com Multer
 - [ ] Criando teste de integração para a rota de salvar foto

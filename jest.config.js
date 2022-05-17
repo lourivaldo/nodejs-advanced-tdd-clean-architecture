@@ -1,4 +1,5 @@
 module.exports = {
+  testTimeout: 10000,
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts',
     '!<rootDir>/src/main/**',
