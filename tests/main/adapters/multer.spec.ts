@@ -9,7 +9,15 @@ jest.mock('multer')
 const adaptMulter: RequestHandler = (req, res, next) => {
   const upload = multer().single('picture')
   upload(req, res, (error) => {
-    res.status(500).json({ error: new ServerError(error).message })
+    if (error !== undefined) {
+      return res.status(500).json({ error: new ServerError(error).message })
+    }
+    if (req.file !== undefined) {
+      req.locals = {
+        ...req.locals,
+        file: { buffer: req.file.buffer, mimeType: req.file.mimetype }
+      }
+    }
   })
 }
 
@@ -24,14 +32,20 @@ describe('MulterAdapter', () => {
   let sut: RequestHandler
 
   beforeAll(() => {
-    uploadSpy = jest.fn().mockImplementation(() => {})
+    uploadSpy = jest.fn().mockImplementation((req, res, next) => {
+      req.file = { buffer: Buffer.from('any_buffer'), mimetype: 'any_type' }
+      next()
+    })
     singleSpy = jest.fn().mockImplementation(() => uploadSpy)
     multerSpy = jest.fn().mockImplementation(() => ({ single: singleSpy }))
     fakeMulter = multer as jest.Mocked<typeof multer>
     mocked(fakeMulter).mockImplementation(multerSpy)
-    req = getMockReq()
     res = getMockRes().res
     next = getMockRes().next
+  })
+
+  beforeEach(() => {
+    req = getMockReq({ locals: { anyLocals: 'any_locals' } })
     sut = adaptMulter
   })
 
@@ -58,5 +72,27 @@ describe('MulterAdapter', () => {
     expect(res.status).toHaveBeenCalledTimes(1)
     expect(res.json).toHaveBeenCalledWith({ error: new ServerError(error).message })
     expect(res.json).toHaveBeenCalledTimes(1)
+  })
+
+  it('should not add file to req.locals', async () => {
+    uploadSpy.mockImplementationOnce((req, res, next) => {
+      next()
+    })
+
+    sut(req, res, next)
+
+    expect(req.locals).toEqual({ anyLocals: 'any_locals' })
+  })
+
+  it('should add file to req.locals', async () => {
+    sut(req, res, next)
+
+    expect(req.locals).toEqual({
+      anyLocals: 'any_locals',
+      file: {
+        buffer: req.file?.buffer,
+        mimeType: req.file?.mimetype
+      }
+    })
   })
 })
