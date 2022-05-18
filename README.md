@@ -125,8 +125,8 @@ npm test:fb-api
 - [x] Criando teste de integração para a AWS S3
 - [x] Corrigindo use case para adicionar extensão no arquivo
 - [x] Criando teste de integração para a rota de apagar foto
-- [ ] Ajustes nos Controllers de upload
-- [ ] Upload com Multer
+- [x] Ajustes nos Controllers de upload
+- [x] Upload com Multer
 - [ ] Criando teste de integração para a rota de salvar foto
 - [ ] Teste em ambiente real
 - Section 14: Bônus
