@@ -4,6 +4,8 @@ CREATE TABLE IF NOT EXISTS usuarios (
   "email" TEXT NOT NULL,
   "senha" TEXT,
   "id_facebook" TEXT NOT NULL,
+  "foto" TEXT,
+  "iniciais" TEXT,
 
   PRIMARY KEY ("id")
 );

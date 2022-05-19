@@ -127,8 +127,8 @@ npm test:fb-api
 - [x] Criando teste de integração para a rota de apagar foto
 - [x] Ajustes nos Controllers de upload
 - [x] Upload com Multer
-- [ ] Criando teste de integração para a rota de salvar foto
-- [ ] Teste em ambiente real
+- [x] Criando teste de integração para a rota de salvar foto
+- [x] Teste em ambiente real
 - Section 14: Bônus
 - [ ] Ormconfig com dados dinâmicos
 - [ ] Como fazer transaction de BD no Clean Architecture
