@@ -9,24 +9,24 @@ import { PgUser } from '@/infra/repos/postgres/entities'
 import { env } from '@/main/config/env'
 
 describe('User Routes', () => {
+  let pgBackup: IBackup
+  let pgUserRepo: Repository<PgUser>
+
+  beforeAll(async () => {
+    const db = await makeFakeDb()
+    pgBackup = db.backup()
+    pgUserRepo = getRepository(PgUser)
+  })
+
+  afterAll(async () => {
+    await getConnection().close()
+  })
+
+  beforeEach(() => {
+    pgBackup.restore()
+  })
+
   describe('DELETE /users/picture', () => {
-    let pgBackup: IBackup
-    let pgUserRepo: Repository<PgUser>
-
-    beforeAll(async () => {
-      const db = await makeFakeDb()
-      pgBackup = db.backup()
-      pgUserRepo = getRepository(PgUser)
-    })
-
-    afterAll(async () => {
-      await getConnection().close()
-    })
-
-    beforeEach(() => {
-      pgBackup.restore()
-    })
-
     it('should return 403 if no authorization header is present', async () => {
       const { status } = await request(app)
         .delete('/api/users/picture')
@@ -44,6 +44,15 @@ describe('User Routes', () => {
 
       expect(status).toBe(200)
       expect(body).toEqual({ pictureUrl: undefined, initials: 'LV' })
+    })
+  })
+
+  describe('PUT /users/picture', () => {
+    it('should return 403 if no authorization header is present', async () => {
+      const { status } = await request(app)
+        .put('/api/users/picture')
+
+      expect(status).toBe(403)
     })
   })
 })
