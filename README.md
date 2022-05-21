@@ -130,7 +130,7 @@ npm test:fb-api
 - [x] Criando teste de integração para a rota de salvar foto
 - [x] Teste em ambiente real
 - Section 14: Bônus
-- [ ] Ormconfig com dados dinâmicos
+- [x] Ormconfig com dados dinâmicos
 - [ ] Como fazer transaction de BD no Clean Architecture
 - [ ] Gerenciando a criação da conexão com banco com Singleton Pattern
 - [ ] Gerenciando o fechamento da conexão com banco com Singleton Pattern
