@@ -44,6 +44,7 @@
     "jest": "^27.3.1",
     "jest-mock-extended": "^2.0.5",
     "lint-staged": "^12.4.1",
+    "mockdate": "^3.0.5",
     "pg-mem": "^2.3.5",
     "supertest": "^6.2.3",
     "ts-jest": "^27.0.7",
