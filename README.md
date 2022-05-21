@@ -134,7 +134,7 @@ npm test:fb-api
 - [x] Como fazer transaction de BD no Clean Architecture
 - [x] Gerenciando a criação da conexão com banco com Singleton Pattern
 - [x] Gerenciando o fechamento da conexão com banco com Singleton Pattern
-- [ ] Gerenciando operações de transações no banco com Singleton Pattern
+- [x] Gerenciando operações de transações no banco com Singleton Pattern
 - [ ] Utilizando repository do typeorm por dentro do Singleton
 - [ ] Correção no UniqueId
 - [ ] Correção na Transaction do TypeORM
