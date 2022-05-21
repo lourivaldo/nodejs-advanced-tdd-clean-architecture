@@ -25,7 +25,7 @@ export const forbidden = (): HttpResponse => ({
   data: new ForbiddenError()
 })
 
-export const serverError = (error: Error): HttpResponse => ({
+export const serverError = (error: unknown): HttpResponse => ({
   statusCode: 500,
-  data: new ServerError(error)
+  data: new ServerError(error instanceof Error ? error : undefined)
 })
