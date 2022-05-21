@@ -131,8 +131,8 @@ npm test:fb-api
 - [x] Teste em ambiente real
 - Section 14: Bônus
 - [x] Ormconfig com dados dinâmicos
-- [ ] Como fazer transaction de BD no Clean Architecture
-- [ ] Gerenciando a criação da conexão com banco com Singleton Pattern
+- [x] Como fazer transaction de BD no Clean Architecture
+- [x] Gerenciando a criação da conexão com banco com Singleton Pattern
 - [ ] Gerenciando o fechamento da conexão com banco com Singleton Pattern
 - [ ] Gerenciando operações de transações no banco com Singleton Pattern
 - [ ] Utilizando repository do typeorm por dentro do Singleton
