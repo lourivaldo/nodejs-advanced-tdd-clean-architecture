@@ -1,6 +1,7 @@
 import { mock, MockProxy } from 'jest-mock-extended'
 
 import { Controller } from '@/application/controllers'
+import { HttpResponse } from '@/application/helpers'
 
 export class DbTransactionController {
   constructor (
@@ -8,15 +9,17 @@ export class DbTransactionController {
     private readonly db: DbTransaction
   ) {}
 
-  async perform (httpRequest: any): Promise<void> {
+  async perform (httpRequest: any): Promise<HttpResponse | undefined> {
     await this.db.openTransaction()
     try {
-      await this.decoratee.perform(httpRequest)
+      const httpResponse = await this.decoratee.perform(httpRequest)
       await this.db.commit()
-    } catch {
+      await this.db.closeTransaction()
+      return httpResponse
+    } catch (error) {
       await this.db.rollback()
+      await this.db.closeTransaction()
     }
-    await this.db.closeTransaction()
   }
 }
 
@@ -35,6 +38,7 @@ describe('DbTransactionController', () => {
   beforeAll(() => {
     db = mock()
     decoratee = mock()
+    decoratee.perform.mockResolvedValue({ statusCode: 204, data: null })
   })
 
   beforeEach(() => {
@@ -63,6 +67,24 @@ describe('DbTransactionController', () => {
     expect(db.commit).toHaveBeenCalledTimes(1)
     expect(db.closeTransaction).toHaveBeenCalledWith()
     expect(db.closeTransaction).toHaveBeenCalledTimes(1)
+  })
+
+  it('should call rollback and close transaction on failure', async () => {
+    decoratee.perform.mockRejectedValueOnce(new Error('decoratee_error'))
+
+    await sut.perform({ any: 'any' })
+
+    expect(db.commit).not.toHaveBeenCalled()
+    expect(db.rollback).toHaveBeenCalledWith()
+    expect(db.rollback).toHaveBeenCalledTimes(1)
+    expect(db.closeTransaction).toHaveBeenCalledWith()
+    expect(db.closeTransaction).toHaveBeenCalledTimes(1)
+  })
+
+  it('should return same result as decoratee on success', async () => {
+    const httpResponse = await sut.perform({ any: 'any' })
+
+    expect(httpResponse).toEqual({ statusCode: 204, data: null })
   })
 
   it('should call rollback and close transaction on failure', async () => {
