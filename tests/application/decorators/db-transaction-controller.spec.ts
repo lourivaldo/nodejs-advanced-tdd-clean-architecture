@@ -14,10 +14,11 @@ export class DbTransactionController {
     try {
       const httpResponse = await this.decoratee.perform(httpRequest)
       await this.db.commit()
-      await this.db.closeTransaction()
       return httpResponse
     } catch (error) {
       await this.db.rollback()
+      throw error
+    } finally {
       await this.db.closeTransaction()
     }
   }
@@ -72,13 +73,13 @@ describe('DbTransactionController', () => {
   it('should call rollback and close transaction on failure', async () => {
     decoratee.perform.mockRejectedValueOnce(new Error('decoratee_error'))
 
-    await sut.perform({ any: 'any' })
-
-    expect(db.commit).not.toHaveBeenCalled()
-    expect(db.rollback).toHaveBeenCalledWith()
-    expect(db.rollback).toHaveBeenCalledTimes(1)
-    expect(db.closeTransaction).toHaveBeenCalledWith()
-    expect(db.closeTransaction).toHaveBeenCalledTimes(1)
+    await sut.perform({ any: 'any' }).catch(() => {
+      expect(db.commit).not.toHaveBeenCalled()
+      expect(db.rollback).toHaveBeenCalledWith()
+      expect(db.rollback).toHaveBeenCalledTimes(1)
+      expect(db.closeTransaction).toHaveBeenCalledWith()
+      expect(db.closeTransaction).toHaveBeenCalledTimes(1)
+    })
   })
 
   it('should return same result as decoratee on success', async () => {
@@ -87,15 +88,12 @@ describe('DbTransactionController', () => {
     expect(httpResponse).toEqual({ statusCode: 204, data: null })
   })
 
-  it('should call rollback and close transaction on failure', async () => {
-    decoratee.perform.mockRejectedValueOnce(new Error('decoratee_error'))
+  it('should rethrow if decoratee throws', async () => {
+    const error = new Error('decoratee_error')
+    decoratee.perform.mockRejectedValueOnce(error)
 
-    await sut.perform({ any: 'any' })
+    const promise = sut.perform({ any: 'any' })
 
-    expect(db.commit).not.toHaveBeenCalled()
-    expect(db.rollback).toHaveBeenCalledWith()
-    expect(db.rollback).toHaveBeenCalledTimes(1)
-    expect(db.closeTransaction).toHaveBeenCalledWith()
-    expect(db.closeTransaction).toHaveBeenCalledTimes(1)
+    await expect(promise).rejects.toThrow(error)
   })
 })
