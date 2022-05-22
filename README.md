@@ -136,11 +136,11 @@ npm test:fb-api
 - [x] Gerenciando o fechamento da conexão com banco com Singleton Pattern
 - [x] Gerenciando operações de transações no banco com Singleton Pattern
 - [x] Utilizando repository do typeorm por dentro do Singleton
-- [ ] Correção no UniqueId
-- [ ] Correção na Transaction do TypeORMtoHaveBeenCalledTimes
-- [ ] Atualização no Error do Typescript
-- [ ] DB Transaction com Decorator Pattern
-- [ ] Testando a Transaction em um caso real
+- [x] Correção no UniqueId
+- [x] Correção na Transaction do TypeORMtoHaveBeenCalledTimes
+- [x] Atualização no Error do Typescript
+- [x] DB Transaction com Decorator Pattern
+- [x] Testando a Transaction em um caso real
 
 
 > ## Princípios
