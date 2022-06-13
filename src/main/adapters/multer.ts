@@ -3,7 +3,12 @@ import multer from 'multer'
 import { ServerError } from '@/application/errors'
 
 export const adaptMulter: RequestHandler = (req, res, next) => {
-  const upload = multer().single('picture')
+  const multerOptions = {
+    limits: {
+      fileSize: 10000000
+    }
+  }
+  const upload = multer(multerOptions).single('picture')
   upload(req, res, (error) => {
     if (error !== undefined) {
       return res.status(500).json({ error: new ServerError(error).message })
